@@ -1,0 +1,10 @@
+# PPP options for the PPPoE server
+# LIC: GPL
+require-chap
+#login
+auth
+lcp-echo-interval 10
+lcp-echo-failure 2
+mru 1492
+mtu 1492
+

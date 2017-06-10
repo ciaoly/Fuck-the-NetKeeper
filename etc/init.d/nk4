@@ -1,0 +1,35 @@
+#!/bin/sh /etc/rc.common
+
+START=99
+STOP=15
+
+start()
+{
+    sh /usr/share/nk4/nk4.sh &
+    logger "netkeeper start"
+}
+
+stop()
+{
+    pid=$(ps | grep "nk4.sh" | grep -v "grep" | cut -c 1-5 )
+    if [ ${pid} ]
+    then
+        kill $pid
+    else
+        logger "netkeeper has not been run"
+    fi
+    logger "netkeeper stop"
+}
+
+restart()
+{
+    pid=$(ps | grep "nk4.sh" | grep -v "grep" | cut -c 1-5 )
+    if [ ${pid} ]
+    then
+        kill $pid
+    else
+        logger "netkeeper has not been run"
+    fi
+    sh /usr/share/nk4/nk4.sh &
+    logger "netkeeper restart"
+}

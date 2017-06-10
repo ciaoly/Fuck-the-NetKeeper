@@ -1,0 +1,5 @@
+
+config setting 'nk'
+	option interface 'netkeeper'
+	option password '123123'
+

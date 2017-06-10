@@ -1,0 +1,17 @@
+
+config pppoe_server
+	option ac_name 'access-concentrator-name'
+	list service_name 'service-name1'
+	list service_name 'service-name2'
+	option maxsessionsperpeer '0'
+	option localip '192.168.2.1'
+	option firsremoteip '192.168.2.2'
+	option maxsessions '64'
+	option optionsfile '/etc/ppp/pppoe-server-options'
+	option unit '0'
+	option offset '0'
+	option timeout '60'
+	option mss '1468'
+	option sync '0'
+	option interface 'br-lan'
+
